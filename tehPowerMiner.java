@@ -47,7 +47,7 @@ public class tehPowerMiner extends Script{
 				GameObject mineableRock = findNearestRock(IRON_ROCK_ID, MAX_ROCK_DISTANCE);
 
 				if (mineableRock != null){
-					rock.Interact("Mine");
+					mineableRock.Interact("Mine");
 					while(Player.getAnimation != -1){
 						rand = new Random();
 						int randomNum = rand.nextInt(MAX_RANDOM - MIN_RANDOM + 1) + MIN_RANDOM;

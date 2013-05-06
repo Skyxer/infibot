@@ -30,7 +30,7 @@ public class tehPowerMiner extends Script{
 
 	@Override
 	public void run(){
-		if(onStartup() == true){
+		if(onStartup()){
 			while(true){
 				sleep(loop());
 			}

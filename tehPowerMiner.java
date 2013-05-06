@@ -5,12 +5,12 @@ import com.infibot.api.env.local.Player;
 import com.infibot.bot.script.Script;
 
 public class tehPowerMiner extends Script{
-  private Random rand;
-	private final int MIN_RANDOM = 500
-	private final int MAX_RANDOM = 3000;
-	private final int IRON_ROCK_ID = 1; //NEEDS TO BE SET
-	private final int MAX_ROCK_DISTANCE = 10;
-	private final int[] PICKAXE_IDS = {100, 101, 102, 103} //NEEDS TO BE SET (ADD A CASH STACK ID)
+  	private Random rand;
+	private static final int MIN_RANDOM = 500
+	private static final int MAX_RANDOM = 3000;
+	private static final int IRON_ROCK_ID = 1; //NEEDS TO BE SET
+	private static final int MAX_ROCK_DISTANCE = 10;
+	private static final int[] PICKAXE_IDS = {100, 101, 102, 103} //NEEDS TO BE SET (ADD A CASH STACK ID)
 
 	private boolean onStartup()
 	{

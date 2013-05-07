@@ -28,7 +28,6 @@ public class PowerFisher extends Script {
 			"Big Net", "Fly", "Lobster pot", "Harpoon" };
 
 	public void getFishingType() {
-
 		// Lets popup a nice interface asking what type of fishing what the user
 		// wants to do.
 		FISHING_TYPE_CHOSEN = (String) JOptionPane.showInputDialog(null,
@@ -63,7 +62,6 @@ public class PowerFisher extends Script {
 	}
 
 	public Boolean hasAllItems() {
-
 		// Check for bait+rod or feathers and fly rod
 		if (FISHING_TYPE_CHOSEN == FISHING_TYPE_LIST[1]
 				|| FISHING_TYPE_CHOSEN == FISHING_TYPE_LIST[3]) {
@@ -88,7 +86,6 @@ public class PowerFisher extends Script {
 			}
 
 		}
-
 		// Only needs one item, so we check for that instead
 		else {
 			// Check if contains needed item to fish with net
@@ -124,8 +121,8 @@ public class PowerFisher extends Script {
 		if (fishingSpot != null) {
 			if (!Camera.isVisible(fishingSpot)) {
 				Camera.face(fishingSpot, Random.next(30, 40));
-			}
-			else if (Camera.isVisible(fishingSpot) && Players.getMyPlayer().getAnimation() == -1) {
+			} else if (Camera.isVisible(fishingSpot)
+					&& Players.getMyPlayer().getAnimation() == -1) {
 				fishingSpot.interact("Net"); // SETTS
 			}
 		}

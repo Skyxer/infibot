@@ -156,8 +156,9 @@ public class PowerFisher extends Script {
 			if (hasAllItems()) {
 				while (!Inventory.isFull()) {
 					catchFishies();
+				} else {
+					dropFishies();
 				}
-				dropFishies();
 			}
 		}
 		return 100;

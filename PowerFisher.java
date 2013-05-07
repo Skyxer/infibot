@@ -20,7 +20,7 @@ import com.infibot.bot.script.Script;
 
 @Manifest(name = "Skyxer's Powerfisher", description = "Powerfishes whatever you want.", authors = { "Skyxer" }, version = 0.1)
 public class PowerFisher extends Script {
-  private String FISHING_TYPE_CHOSEN;
+	private String FISHING_TYPE_CHOSEN;
 	private static final int SMALLNET_ID = 303, BAIT_ID = 317, ROD_ID = 307,
 			FLYROD_ID = 309, BIGNET_ID = 305, LOBSTERPOT_ID = 301,
 			HARPOON_ID = 311, FEATHER_ID = 314, FISHINGSPOT_ID = 0;
@@ -124,9 +124,9 @@ public class PowerFisher extends Script {
 		if (fishingSpot != null) {
 			if (!Camera.isVisible(fishingSpot)) {
 				Camera.face(fishingSpot, Random.next(30, 40));
-				if (Players.getMyPlayer().getAnimation() == -1) {
-					fishingSpot.interact(""); // SETTS
-				}
+			}
+			else if (Camera.isVisible(fishingSpot) && Players.getMyPlayer().getAnimation() == -1) {
+				fishingSpot.interact("Net"); // SETTS
 			}
 		}
 	}

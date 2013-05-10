@@ -144,7 +144,7 @@ public class PowerFisher extends Script {
 				Sleep.millis(250, 500);
 				antiBan(fishingSpot);
 			}
-			fishingSpot.interact("Net");
+			fishingSpot.interact(getInteractionType(FISHING_TYPE_CHOSEN);
 			Sleep.millis(500, 1500);
 		}
 	}

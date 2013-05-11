@@ -25,7 +25,7 @@ import com.infibot.bot.script.Script;
 @Manifest(name = "Skyxer's AIO Pickpocketer", description = "Pickpockets a variety of NPCs", authors = { "Skyxer" }, version = 0.1)
 public class AIOPickpocketer extends Script {
 
-  // Script vars
+	// Script vars
 	private static int[] NPC_ID = { 1, 4, 7, 15, 2234, 1805, 660, 365, 21, 2362 };
 	private static String[] NPC_NAMES = { "Man", "Women", "Farmer", "Warrior",
 			"Master farmer", "Guard", "Knight", "Paladin", "Hero", "Elf" };
@@ -94,11 +94,12 @@ public class AIOPickpocketer extends Script {
 	 * @return
 	 */
 	public boolean pickpocketNpc(int npcId) {
+		Npc pickpocketTarget = Npcs.getNearest(npcId);
 		if (getPickpocketNpc()) {
 			return true;
 		}
 		else{
-			Camera.rotateRandomly();
+			Camera.face(pickpocketTarget);
 			Sleep.millis(100, 700);
 		}
 		return false;

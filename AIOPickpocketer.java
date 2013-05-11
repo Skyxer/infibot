@@ -10,6 +10,7 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 
+import com.infibot.api.Predicate;
 import com.infibot.api.Random;
 import com.infibot.api.Sleep;
 import com.infibot.api.env.Logger;
@@ -24,7 +25,7 @@ import com.infibot.bot.script.Script;
 @Manifest(name = "Skyxer's AIO Pickpocketer", description = "Pickpockets a variety of NPCs", authors = { "Skyxer" }, version = 0.1)
 public class AIOPickpocketer extends Script {
 
-  // Script vars
+	// Script vars
 	private static int[] NPC_ID = { 1, 4, 7, 15, 2234, 1805, 660, 365, 21, 2362 };
 	private static String[] NPC_NAMES = { "Man", "Women", "Farmer", "Warrior",
 			"Master farmer", "Guard", "Knight", "Paladin", "Hero", "Elf" };
@@ -64,8 +65,9 @@ public class AIOPickpocketer extends Script {
 	@Override
 	public boolean onStart() {
 		npcChoice = (String) JOptionPane.showInputDialog(null,
-				"Choose how do you want to fish...", "Fishing Method Picker",
-				JOptionPane.QUESTION_MESSAGE, null, NPC_NAMES, NPC_NAMES[0]);
+				"Who are we stealing from today?",
+				"Pick-pocket target selector", JOptionPane.QUESTION_MESSAGE,
+				null, NPC_NAMES, NPC_NAMES[0]);
 		startTime = System.currentTimeMillis();
 		xpGained = 0;
 		return true;
@@ -80,7 +82,7 @@ public class AIOPickpocketer extends Script {
 	public boolean pickpocketNpc(int npcId) {
 		Npc pickpocketTarget = Npcs.getNearest(npcId);
 		if (pickpocketTarget != null && Camera.isVisible(pickpocketTarget)) {
-			pickpocketTarget.interact("Pickpocket", true);
+			pickpocketTarget.interact("Pick-pocket", true);
 			xpGained += getNpcXp(npcId);
 			antiBan(pickpocketTarget);
 		} else {

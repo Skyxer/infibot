@@ -26,10 +26,10 @@ import com.infibot.bot.script.Script;
 public class AIOPickpocketer extends Script {
 
 	// Script vars
-	private static int[] NPC_ID = { 1, 4, 7, 15, 2234, 1805, 660, 365, 21, 2362 };
-	private static String[] NPC_NAMES = { "Man", "Women", "Farmer", "Warrior",
+	private final static int[] NPC_ID = { 1, 4, 7, 15, 2234, 1805, 660, 365, 21, 2362 };
+	private final static String[] NPC_NAMES = { "Man", "Women", "Farmer", "Warrior",
 			"Master farmer", "Guard", "Knight", "Paladin", "Hero", "Elf" };
-	private static double[] NPC_XP = { 8, 8, 14.5, 26, 43, 46.5, 84.3, 151.75,
+	private final static double[] NPC_XP = { 8, 8, 14.5, 26, 43, 46.5, 84.3, 151.75,
 			273.3, 353.3 };
 	private String npcChoice;
 	// Paint vars
